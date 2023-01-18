@@ -1,8 +1,8 @@
 services:
-  - podman
+  - docker
 
   before_install:
-    - podman build -t absoluteun1t/docker-react -f Dockerfile.dev .
+    - docker build -t absoluteun1t/docker-react -f Dockerfile.dev .
 
   script:
-    - podman run absoluteun1t/docker-react npm run test -- --coverage
+    - docker run absoluteun1t/docker-react npm run test -- --coverage
